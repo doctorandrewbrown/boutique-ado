@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    # home app
+    'home'
 ]
 
 MIDDLEWARE = [
@@ -59,7 +61,13 @@ ROOT_URLCONF = 'boutique_ado.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+
+        # Register directories below
+        'DIRS': [
+            # 
+            os.path.join(BASE_DIR, "templates"),
+            os.path.join(BASE_DIR, "templates", "allauth")
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
